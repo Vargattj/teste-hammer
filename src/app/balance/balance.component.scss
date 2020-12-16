@@ -1,0 +1,26 @@
+.balance-list {
+  margin: 60px auto;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  padding: 20px;
+  thead {
+    cursor: pointer;
+    color: #004861;
+    font-weight: bold;
+    tr th {
+      font-weight: bold;
+      padding: 12px 20px;
+    }
+  }
+  tbody {
+    tr {
+      color: #555;
+      width: 100%;
+      td {
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+        padding: 15px 5px;
+      }
+    }
+  }
+}

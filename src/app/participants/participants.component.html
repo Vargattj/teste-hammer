@@ -1,0 +1,38 @@
+<table style="width: 100%" id="participants">
+  <thead>
+    <tr>
+      <th><span>Funcionário</span></th>
+      <th><span>Vai Beber?</span></th>
+      <th><span>Convidado</span></th>
+      <th><span>Opções</span></th>
+    </tr>
+  </thead>
+
+  <tbody *ngIf="participants && participants.length">
+    <tr *ngFor="let participant of participants">
+      <td>{{ participant.name }}</td>
+      <td *ngIf="participant.drink">Sim</td>
+      <td *ngIf="!participant.drink">Não</td>
+      <td *ngIf="participant.guest && participant.guest.exists">
+        {{ participant.guest.name }}
+      </td>
+      <td *ngIf="participant.guest && !participant.guest.exists">Não</td>
+      <td *ngIf="!participant.guest">Não</td>
+      <td>
+        <button
+          class="delete-button"
+          (click)="deleteParticipant(participant.id)"
+        >
+          Deletar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<a routerLink="/participar" class="back-button">Novo Participante</a>
+
+<app-balance
+  [totalBalance]="balance"
+  [totalDrink]="totalDrink"
+  [totalFood]="totalFood"
+></app-balance>

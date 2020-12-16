@@ -1,0 +1,98 @@
+<form class="participant-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <div *ngIf="newParticipant">
+    <label for="name">Nome</label>
+    <input
+      class="form-control"
+      type="text"
+      id="name"
+      required
+      [(ngModel)]="newParticipant.name"
+      name="newParticipant.name"
+    />
+  </div>
+  <h2>Você vai beber?</h2>
+  <div class="radio-container">
+    <div>
+      <label for="drinkY">SIM</label>
+      <input
+        type="radio"
+        id="drinkY"
+        value="true"
+        [(ngModel)]="newParticipant.drink"
+        name="newParticipant.drink"
+        required
+      />
+    </div>
+    <div>
+      <label for="drinKN">NÃO</label>
+      <input
+        type="radio"
+        id="drinkN"
+        [value]="false"
+        [(ngModel)]="newParticipant.drink"
+        name="newParticipant.drink"
+      />
+    </div>
+  </div>
+  <h2>Convidado</h2>
+  <div class="radio-container" *ngIf="newParticipant.guest">
+    <div>
+      <label for="guestY">Sim</label>
+      <input
+        type="radio"
+        id="guestY"
+        value="true"
+        [(ngModel)]="newParticipant.guest.exists"
+        name="newParticipant.guest.exists"
+      />
+    </div>
+    <div>
+      <label for="guestN">Não</label>
+      <input
+        [value]="false"
+        type="radio"
+        id="guestN"
+        [(ngModel)]="newParticipant.guest.exists"
+        name="newParticipant.guest.exists"
+      />
+    </div>
+  </div>
+  <div *ngIf="newParticipant.guest && newParticipant.guest.exists">
+    <div>
+      <label for="guestName">Nome do Convidado</label>
+      <input
+        type="text"
+        id="guestName"
+        [(ngModel)]="newParticipant.guest.name"
+        name="newParticipant.guest.name"
+        value="newParticipant.guest.name"
+        required
+      />
+    </div>
+    <h2>O convidado vai beber?</h2>
+    <div class="radio-container">
+      <div>
+        <label for="guestDrinkY">SIM</label>
+        <input
+          type="radio"
+          id="guestDrinkY"
+          [value]="true"
+          [(ngModel)]="newParticipant.guest.drink"
+          name="newParticipant.guest.drink"
+        />
+      </div>
+      <div>
+        <label for="guestDrinkN">Não</label>
+        <input
+          type="radio"
+          id="guestDrinkN"
+          [value]="false"
+          [(ngModel)]="newParticipant.guest.drink"
+          name="newParticipant.guest.drink"
+        />
+      </div>
+    </div>
+  </div>
+
+  <button type="submit">Confirmar Participação</button>
+</form>

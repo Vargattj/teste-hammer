@@ -1,0 +1,52 @@
+#participants {
+  margin: 0 auto;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  padding: 20px;
+  height: auto;
+  thead {
+    cursor: pointer;
+    color: #004861;
+    font-weight: bold;
+    tr th {
+      font-weight: bold;
+      padding: 12px 20px;
+    }
+  }
+  tbody {
+    tr {
+      color: #555;
+      width: 100%;
+      td {
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+        padding: 15px 5px;
+      }
+      .delete-button {
+        color: #fff;
+        background-color: #dc3447;
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        text-align: center;
+        &:hover {
+          opacity: 0.8;
+          transition: all 0.3s;
+        }
+      }
+    }
+  }
+}
+
+.back-button {
+  padding: 10px;
+  background: #004861;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  margin: 20px auto;
+  display: flex;
+  width: fit-content;
+}

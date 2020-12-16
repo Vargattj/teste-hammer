@@ -1,0 +1,78 @@
+.participant-form {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+  }
+  label {
+    color: #666;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 3px;
+  }
+  h2 {
+    color: #666;
+    letter-spacing: 0.5;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    width: fit-content;
+  }
+  input {
+    max-width: 300px;
+    outline: none;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border: 2px solid #ccc;
+    margin-bottom: 15px;
+  }
+  input[type="radio"] {
+    background-color: #555;
+    color: #555;
+  }
+  button {
+    text-transform: uppercase;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 22px;
+    border: none;
+    outline: none;
+    padding: 15px;
+    background-color: #004861;
+    color: #eee;
+    font-weight: bold;
+    border: 1px solid transparent;
+    cursor: pointer;
+    &:hover {
+      background-color: #eee;
+      color: #7d7d7d;
+      border-color: #7d7d7d;
+      transition: all 0.4s ease;
+    }
+  }
+  .radio-container {
+    margin-bottom: 10px;
+
+    & > div {
+      flex-direction: row;
+    }
+    label {
+      color: #aaa;
+      margin-bottom: 0;
+    }
+    input {
+      margin: 0;
+      margin-left: 12px;
+    }
+  }
+}
